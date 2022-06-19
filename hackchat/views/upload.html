@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload</title>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/css/index.css" rel="stylesheet" media="screen">
+    <script src="/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        textarea {
+            outline-style: none;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 13px 14px;
+            width: 620px;
+            height: 100px;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: "Microsoft soft";
+        }
+
+        textarea:focus {
+            border-color: #66afe9;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6)
+        }
+
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 25px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top nav1">
+    <div class="container-fluid">
+        <div class="navbar-header ul-head0">
+            <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">HOME</a>
+        </div>
+
+        <div class="navbar-collapse collapse nav2" aria-expanded="false" style="height: 0px">
+            <ul class="nav navbar-nav ul-head1">
+                <li class=""><a href="/chat">聊天室</a></li>
+                <li class=""><a href="/files">所有文件</a></li>
+                <li class=""><a href="/upload">上传文件</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right ul-head2">
+                <li class=""><a href="/logout">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<center>
+<br>
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <font color="#dc143c">
+        <input type="file" name="content" >
+    </font>
+    <br>
+    <button type="submit">提交</button>
+</form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <pre>文件名中不要含有中文字符等非ascii字符</pre>
+</center>
+
+<script src="/util.js"></script>
+
+</body>
+</html>

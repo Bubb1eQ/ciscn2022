@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>所有文件</title>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/css/index.css" rel="stylesheet" media="screen">
+    <script src="/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        table.hovertable {
+            font-family: verdana,arial,sans-serif;
+            font-size:11px;
+            color:#333333;
+            border-width: 2px;
+            position: center;
+            border-color: #999999;
+            border-collapse: collapse;
+        }
+        table.hovertable th {
+            background-color:#c3dde0;
+            border-width: 2px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #a9c6c9;
+        }
+        table.hovertable tr {
+            background-color:#d4e3e5;
+        }
+        table.hovertable td {
+            border-width: 2px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #a9c6c9;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top nav1">
+    <div class="container-fluid">
+        <div class="navbar-header ul-head0">
+            <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">HOME</a>
+        </div>
+
+        <div class="navbar-collapse collapse nav2" aria-expanded="false" style="height: 0px">
+            <ul class="nav navbar-nav ul-head1">
+                <li class=""><a href="/chat">聊天室</a></li>
+                <li class=""><a href="/files">所有文件</a></li>
+                <li class=""><a href="/upload">上传文件</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right ul-head2">
+                <li class=""><a href="/logout">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<center>
+<table class="hovertable" >
+    {% if files.length %}
+    <tr>
+        <th>文件</th><th>下载</th>
+    </tr>
+    {% endif %}
+    {% for x in files %}
+        <tr οnmοuseοver="this.style.backgroundColor='#ffff66';" οnmοuseοut="this.style.backgroundColor='#d4e3e5';">
+            <td width="400px" align='center' valign="center">{{x}}</td>{{7*7}}
+            <td width="100px" align='center' valign="center"><a href="/download/{{x}}" target="_blank">点击下载</a><br></td>
+        </tr>
+    {% endfor %}
+</table>
+</center>
+</body>
+</html>

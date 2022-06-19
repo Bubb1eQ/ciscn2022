@@ -1,0 +1,9 @@
+{
+    "server":"0.0.0.0",
+    "server_port":9000,
+    "password":"password450728870",
+    "timeout":300,
+    "method":"aes-256-gcm",
+    "dns":"192.168.8.1",
+    "mode":"tcp_and_udp"
+}
